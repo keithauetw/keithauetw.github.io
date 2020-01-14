@@ -446,7 +446,8 @@ PDFViewerApplication.animationStartedPromise.then(function() {
   else {
     return;
   }
-  xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
+  //xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
+  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.withCredentials = false;
   xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
   xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
