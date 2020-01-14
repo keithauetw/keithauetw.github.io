@@ -28,7 +28,7 @@ var CMAP_PACKED = true;
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "../../node_modules/pdfjs-dist/build/pdf.worker.js";
 
-var DEFAULT_URL = "https://www.invesco.com.hk/dam/jcr:09e987cb-2bba-4103-95d0-8f48a127ebef/IGW_MRF_Prospectus_KFS_20191231_E.pdf";
+var DEFAULT_URL = "https://www.firststateinvestments.com/uploadedFiles/Content/UploadedLiterature/Auto/EMEA/pdffundfactsheets/IE0008368742-First-State-China-Growth-Fund-I-USD-en-gb.pdf";
 //var DEFAULT_URL = "compressed.tracemonkey-pldi-09.pdf";
 var DEFAULT_FILENAME = "fund_doc.pdf";
 var DEFAULT_SCALE_DELTA = 1.1;
