@@ -448,8 +448,8 @@ PDFViewerApplication.animationStartedPromise.then(function() {
   }
   xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
   xhr.withCredentials = false;
-  xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
+  xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   xhr.responseType = "blob";
   xhr.onload = function (e) {
     if (this.status == 200) {
