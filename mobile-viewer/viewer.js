@@ -437,9 +437,9 @@ PDFViewerApplication.animationStartedPromise.then(function() {
 
     let xhr = new XMLHttpRequest();
     xhr.open("GET", DEFAULT_URL, true);
-    //xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
-    //xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    //xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET');
+    xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET');
     xhr.responseType = "blob";
     xhr.onload = function (e) {
       if (this.status == 200) {
