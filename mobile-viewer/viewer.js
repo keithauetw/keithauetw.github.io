@@ -438,8 +438,8 @@ PDFViewerApplication.animationStartedPromise.then(function() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", DEFAULT_URL, true);
     //xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
-    xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    //xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
+    //xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     //xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
     xhr.responseType = "blob";
     xhr.onload = function (e) {
