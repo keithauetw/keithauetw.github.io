@@ -435,10 +435,19 @@ document.addEventListener(
 // We need to delay opening until all HTML is loaded.
 PDFViewerApplication.animationStartedPromise.then(function() {
 
-    let xhr = new XMLHttpRequest();
-  xhr.open("GET", DEFAULT_URL, true);
+  let xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    xhr.open("GET", DEFAULT_URL, true);
+  }
+  else if (typeof XDomainRequest != "undefined") {
+    xhr = new XDomainRequest();
+    xhr.open("GET", DEFAULT_URL);
+  }
+  else {
+    return;
+  }
   xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
-  xhr.withCredentials = true;
+  xhr.withCredentials = false;
   xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
   xhr.responseType = "blob";
