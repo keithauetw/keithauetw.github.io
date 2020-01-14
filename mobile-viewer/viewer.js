@@ -459,10 +459,10 @@ PDFViewerApplication.animationStartedPromise.then(function() {
         a.download = DEFAULT_FILENAME;
         a.click();
         */
-       
+
         setTimeout(() => {
           window.URL.revokeObjectURL(blobUrl);
-          document.body.removeChild(a);
+          //document.body.removeChild(a);
         }, 0);
       }
     };
