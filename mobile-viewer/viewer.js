@@ -436,39 +436,39 @@ document.addEventListener(
 PDFViewerApplication.animationStartedPromise.then(function() {
 
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", DEFAULT_URL, true);
-    //xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
-    xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    //xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
-    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
-    xhr.withCredentials = true;
-    xhr.responseType = "blob";
-    xhr.onload = function (e) {
-      if (this.status == 200) {
-        //const blob = this.response;
-        let contentType = xhr.getResponseHeader('Content-Type');
-        let blob = new Blob([this.response], { type: contentType }); // which is application/pdf
-        let blobUrl = window.URL.createObjectURL(blob);
+  xhr.open("GET", DEFAULT_URL, true);
+  //xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
+  xhr.withCredentials = true;
+  xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
+  xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://keithauetw.github.io');
+  xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  //xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
+  xhr.responseType = "blob";
+  xhr.onload = function (e) {
+    if (this.status == 200) {
+      //const blob = this.response;
+      let contentType = xhr.getResponseHeader('Content-Type');
+      let blob = new Blob([this.response], { type: contentType }); // which is application/pdf
+      let blobUrl = window.URL.createObjectURL(blob);
 
-        PDFViewerApplication.open({
-          url: blobUrl,
-        });
+      PDFViewerApplication.open({
+        url: blobUrl,
+      });
 
-        /*
-        let a = document.createElement("a");
-        document.body.appendChild(a);
-        a.href = blobUrl;
-        a.download = DEFAULT_FILENAME;
-        a.click();
-        */
+      /*
+      let a = document.createElement("a");
+      document.body.appendChild(a);
+      a.href = blobUrl;
+      a.download = DEFAULT_FILENAME;
+      a.click();
+      */
 
-        setTimeout(() => {
-          window.URL.revokeObjectURL(blobUrl);
-          //document.body.removeChild(a);
-        }, 0);
-      }
-    };
-    xhr.send();
-  
+      setTimeout(() => {
+        window.URL.revokeObjectURL(blobUrl);
+        //document.body.removeChild(a);
+      }, 0);
+    }
+  };
+  xhr.send();
+
 });
