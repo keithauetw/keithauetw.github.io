@@ -22,6 +22,8 @@
 10) Remember to click the **Join Audio** to enable audio or **Stop Video** to disable video accordingly
 ![](/Users/keith/home/projects/me/keithau.etw/keithauetw.github.io/zoom/7.png)
 
+* * *
+* 
 ### To join a meeting as a participant
 1) Launch the Zoom App.
 2) Press the **Join** button.
